@@ -4,7 +4,7 @@
 
 				<div id="inner-content" class="wrap cf">
 
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+					<main id="main" class="m-all cf" role="main">
 						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -16,7 +16,7 @@
 									<h3 class="search-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
                   						<p class="byline entry-meta vcard">
-                    							<?php printf( __( 'Posted %1$s by %2$s', 'bonestheme' ),
+                    							<?php printf( __( '%1$s', 'bonestheme' ),
                    							    /* the time the post was published */
                    							    '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
                       							    /* the author of the post */

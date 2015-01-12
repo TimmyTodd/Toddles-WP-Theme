@@ -1,10 +1,9 @@
 <?php
 /*
- Template Name: About Page
-*/
-?>
-
-<?php get_header(); ?>
+ * Template Name: Blog
+*/ 
+ get_header();
+ ?>
 
 			<div id="content">
 
@@ -18,14 +17,13 @@
 
 								<header class="article-header">
 
-									<h1 class="page-title"><?php the_title(); ?></h1>
+									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
 									<p class="byline vcard">
 										<?php printf( __( '<time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
 									</p>
 
-
-								</header>
+								</header> <?php // end article header ?>
 
 								<section class="entry-content cf" itemprop="articleBody">
 									<?php
@@ -51,12 +49,9 @@
 											'link_after'  => '</span>',
 										) );
 									?>
-								</section>
+								</section> <?php // end article section ?>
 
-
-								<footer class="article-footer">
-
-                  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+								<footer class="article-footer cf">
 
 								</footer>
 
@@ -67,14 +62,14 @@
 							<?php endwhile; else : ?>
 
 									<article id="post-not-found" class="hentry cf">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+										<header class="article-header">
+											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+										<section class="entry-content">
+											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the page.php template.', 'bonestheme' ); ?></p>
 										</footer>
 									</article>
 
@@ -87,6 +82,5 @@
 				</div>
 
 			</div>
-
 
 <?php get_footer(); ?>

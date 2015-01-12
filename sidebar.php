@@ -1,21 +1,50 @@
-				<div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
+				<div id="sidebar1" class="sidebar m-all cf" role="complementary">
 
-					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
-
-						<?php dynamic_sidebar( 'sidebar1' ); ?>
-
-					<?php else : ?>
-
-						<?php
-							/*
-							 * This content shows up if there are no widgets defined in the backend.
-							*/
+						<?php 
+						    query_posts(array( 
+						        'post_type' => 'recipe',
+						        'showposts' => 4 
+						    ) );  
 						?>
-
-						<div class="no-widgets">
-							<p><?php _e( 'This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
+						<div class="no-widgets t-1of3 d-1of3 cf">
+							<h2>Recipes</h2>
+							<?php while (have_posts()) : the_post(); ?>
+						        <h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+						        <!--<p><?php //echo get_the_excerpt(); ?></p>-->
+							<?php endwhile;?>
 						</div>
 
-					<?php endif; ?>
+						<?php 
+						    query_posts(array( 
+						        'post_type' => 'code',
+						        'showposts' => 4 
+						    ) );  
+						?>
+						<div class="no-widgets t-1of3 d-1of3 cf">
+							<h2>Code</h2>
+							<?php while (have_posts()) : the_post(); ?>
+						        <h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+						        <!--<p><?php //echo get_the_excerpt(); ?></p>-->
+							<?php endwhile;?>
+						</div>
+
+						<?php 
+						    query_posts(array( 
+						        'post_type' => 'music',
+						        'showposts' => 4 
+						    ) );  
+						?>
+						<div class="no-widgets t-1of3 d-1of3 cf">
+							<h2>Music</h2>
+
+							<?php while (have_posts()) : the_post(); ?>
+						        <h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+
+						        <p><?php the_category() ?></p>
+
+						        <p><?php the_content(); ?></p>
+							<?php endwhile;?>
+						</div>
+
 
 				</div>

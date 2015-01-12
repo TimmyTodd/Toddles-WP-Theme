@@ -18,7 +18,7 @@
 
 				<div id="inner-content" class="wrap cf">
 
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<main id="main" class="m-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
 
@@ -30,7 +30,7 @@
 
 									<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), get_author_posts_url( get_the_author_meta( 'ID' ) ));
+										printf( __( '<time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time>', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), get_author_posts_url( get_the_author_meta( 'ID' ) ));
 									?></p>
 
 								</header>
