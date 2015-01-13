@@ -252,7 +252,7 @@ add_filter( 'pre_get_posts', 'my_get_posts' );
 function my_get_posts( $query ) {
 
   if ( is_home() && $query->is_main_query() )
-    $query->set( 'post_type', array( 'post', 'music', 'recipe', 'code' ) );
+    $query->set( 'post_type', array( 'post', 'news', 'music', 'recipe', 'code' ) );
 
   return $query;
 }
@@ -262,7 +262,7 @@ function my_get_posts( $query ) {
 // Define what post types to search
 function searchAll( $query ) {
   if ( $query->is_search ) {
-    $query->set( 'post_type', array( 'post', 'page', 'feed', 'music', 'recipe', 'code'));
+    $query->set( 'post_type', array( 'post', 'page', 'feed', 'news', 'music', 'recipe', 'code'));
   }
   return $query;
 }
